@@ -83,11 +83,6 @@ This project integrates a Raspberry Pi for physical room indication and a web-ba
 - Real-time room availability visualization through LED indicators.
 - Utilizing APIs and database queries for dynamic data handling.
 
-## Future Improvements
-- Implement a calendar view for better booking visualization.
-- Add email notifications for booking confirmations.
-- Enhance the LED system with additional colors or a display screen for better room information.
-
 ## Contact
 If you have questions or need further information about this project, feel free to contact me at M.AbrarParwez@gmail.com.
 
