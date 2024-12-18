@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="">
+</head>
+<body>
+    <div class="register-page">
+        <div class="form">
+          <div class="register">
+            <div class="register-header">
+              <h3>Register</h3>
+              <p>Please enter your credentials to register.</p>
+            </div>
+          </div>
+          {% if error %}
+            <p style="color: red;">{{ error }}</p>
+          {% endif %}
+          <form class="register-form" method="POST">
+            <!-- <input type="text" id="username" name="username" placeholder="username"/> -->
+            <input type="email" id="email" name="email" placeholder="Email"/>
+            <input type="password" id="password" name="password" placeholder="Password"/>
+            <input type="fornavn" id="fornavn" name="fornavn" placeholder="Fornavn"/>
+            <input type="efternavn" id="efternavn" name="efternavn" placeholder="Efternavn"/>
+            <input type="telefonnr" id="telefonnr" name="telefonnr" placeholder="Telefonnr"/>
+            <button>Register</button>
+            <p class="message">Already have an account? <a href="">Login</a></p>
+          </form>
+        </div>
+      </div>
+</body>
+</html>

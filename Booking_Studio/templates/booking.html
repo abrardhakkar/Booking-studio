@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Booking Studio</title>
+  <style>
+    /* Dit CSS-stilark her */
+  </style>
+</head>
+<body>
+  <h1>Velkommen til Booking Studio</h1>
+  <p>Vælg venligst en dato for booking og tidspunkt.</p>
+  
+  <!-- Tabel til at vise datoer og tidspunkter -->
+  <table>
+    <tr>
+      <th>Dato</th>
+      <th>Tidspunkter</th>
+    </tr>
+  </table>
+  
+  <script>
+    // Funktion til at generere datoer og tidspunkter
+    function generateDatesAndTimes() {
+      var table = document.querySelector('table');
+      var dates = [];
+      var times = [
+        "Vælg Tidspunkt", "08:00", "09:00", "10:00", "11:00",
+        "12:00", "13:00", "14:00", "15:00",
+        "16:00", "17:00", "18:00", "19:00", "20:00"
+      ];
+      
+      // Generer datoer for de næste 7 dage
+      for (var i = 0; i < 7; i++) {
+        var date = new Date();
+        date.setDate(date.getDate() + i);
+        dates.push(date);
+      }
+      
+      // Tilføj datoer og tidspunkter til tabellen
+      for (var i = 0; i < 7; i++) {
+        var row = table.insertRow(-1);
+        var dateCell = row.insertCell(0);
+        var timeCell = row.insertCell(1);
+        
+        dateCell.textContent = dates[i].toDateString();
+        
+        // Tilføj tidspunkter for den pågældende dag
+        var timeSelect = document.createElement('select');
+        timeSelect.name = 'time'; // Navn på dropdown for tidspunkt
+        for (var j = 0; j < times.length; j++) {
+          var timeOption = document.createElement('option');
+          timeOption.value = times[j];
+          timeOption.textContent = times[j];
+          timeSelect.appendChild(timeOption);
+        }
+        timeCell.appendChild(timeSelect);
+      }
+    }
+    
+    // Kald funktionen for at generere datoer og tidspunkter
+    generateDatesAndTimes();
+  </script>
+  
+  <form id="myForm" action="confirm" method="post">
+      <!-- Tilføj dine datoer her -->
+    <input type="submit" value="Book">
+  </form>
+</body>
+</html>
